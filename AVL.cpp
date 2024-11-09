@@ -206,14 +206,26 @@ NO* insereArvore(NO* no, int valor)
 
 NO* girarDireita(NO* no)
 {
-	// sua implementação vai aqui
-	return no;
+	NO* raiz2, * raiz2filho;
+	raiz2 = no->esq;
+	raiz2filho = raiz2->dir;
+
+	raiz2->dir = no;
+	no->esq = raiz2filho; 
+
+	return raiz2;
 }
 
 NO* girarEsquerda(NO* no)
 {
-	// sua implementação vai aqui
-	return no;
+	NO* raiz2, * raiz2filho;
+	raiz2 = no->dir;
+	raiz2filho = raiz2->esq;
+
+	raiz2->esq = no;
+	no->dir = raiz2filho;
+
+	return raiz2;
 }
 
 int elementosArvore(NO* no)
