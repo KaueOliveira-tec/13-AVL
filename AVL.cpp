@@ -213,6 +213,9 @@ NO* girarDireita(NO* no)
 	raiz2->dir = no;
 	no->esq = raiz2filho; 
 
+	no->altura = max(alturaNo(no->esq), alturaNo(no->dir)) + 1;
+	raiz2->altura = max(alturaNo(raiz2->esq), alturaNo(raiz2->dir)) + 1;
+
 	return raiz2;
 }
 
@@ -224,6 +227,9 @@ NO* girarEsquerda(NO* no)
 
 	raiz2->esq = no;
 	no->dir = raiz2filho;
+
+	no->altura = max(alturaNo(no->esq), alturaNo(no->dir)) + 1;
+	raiz2->altura = max(alturaNo(raiz2->esq), alturaNo(raiz2->dir)) + 1;
 
 	return raiz2;
 }
